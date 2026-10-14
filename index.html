@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Studio — банковские карты</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body><main id="app"><div class="wrap">
+<header class="top"><div class="brand"><div class="brandmark">▤</div><span>Card<span style="color:#7770f4">Studio</span></span></div><div class="tag">Интерактивная форма · SVG / UI</div></header>
+<section class="intro"><div class="eyebrow">Card manager</div><h1>Добавление банковской карты</h1><p>Заполните данные и наблюдайте, как карточка обновляется в реальном времени. Добавленные записи появятся в таблице ниже.</p></section>
+<div class="workspace"><section class="panel"><div class="panelhead"><h2>Данные карты</h2><span class="step">ШАГ 01 / 01</span></div><div class="notice" id="notice" role="alert"></div><form id="cardForm" autocomplete="off"><div class="fields">
+<div class="field full"><label for="bank">НАЗВАНИЕ БАНКА</label><input id="bank" name="bank" maxlength="32" placeholder="Например, North Bank" required></div>
+<div class="field"><label for="schemeSelect">ПЛАТЁЖНАЯ СИСТЕМА</label><select id="schemeSelect" name="scheme"><option value="visa">Visa</option><option value="mastercard">Mastercard</option><option value="mir">МИР</option><option value="unionpay">UnionPay</option></select></div>
+<div class="field"><label for="number">НОМЕР КАРТЫ</label><input id="number" name="number" inputmode="numeric" autocomplete="off" maxlength="19" placeholder="0000 0000 0000 0000" required aria-describedby="numberHint"><span class="hint" id="numberHint">16 цифр · используйте только тестовые данные</span></div>
+<div class="field full"><label for="holder">ИМЯ ДЕРЖАТЕЛЯ</label><input id="holder" name="holder" maxlength="32" placeholder="ALEX MORGAN" required></div>
+<div class="field"><label for="month">МЕСЯЦ ОКОНЧАНИЯ</label><select id="month" name="month" required><option value="">Месяц</option><option>01</option><option>02</option><option>03</option><option>04</option><option>05</option><option>06</option><option>07</option><option>08</option><option>09</option><option>10</option><option>11</option><option>12</option></select></div>
+<div class="field"><label for="year">ГОД ОКОНЧАНИЯ</label><select id="year" name="year" required><option value="">Год</option></select></div>
+</div><div class="actions"><button class="btn primary" type="submit">＋ Добавить карту</button><button class="btn secondary" type="reset">Очистить</button></div></form></section>
+<aside class="preview-panel"><div class="preview-title"><h2>Предпросмотр</h2><span class="live"><i class="dot"></i> LIVE</span></div><div class="bankcard" aria-label="Предпросмотр банковской карты"><div class="cardtop"><div class="bankname" id="previewBank">НАЗВАНИЕ БАНКА</div><div class="chip" aria-hidden="true"></div></div><div class="number" id="previewNumber">•••• •••• •••• ••••</div><div class="cardbottom"><div><div class="smallcap">Card holder</div><div class="holder" id="previewHolder">ИМЯ ДЕРЖАТЕЛЯ</div><div class="expiry" id="previewExpiry" style="margin-top:7px">MM/YY</div></div><div class="scheme visa" id="previewScheme">VISA</div></div></div><p class="preview-note">Это демонстрационный макет. Не вводите настоящие данные банковской карты.</p><div class="summary"><div class="metric"><span>Платёжная система</span><strong id="summaryScheme">Visa</strong></div><div class="metric"><span>Статус формы</span><strong id="summaryStatus">Ожидание данных</strong></div></div></aside></div>
+<section class="panel table-panel"><div class="table-heading"><h2>Добавленные карты</h2><span class="count" id="count">0 записей</span></div><div class="tablewrap"><table><thead><tr><th>Банк</th><th>Платёжная система</th><th>Номер карты</th><th>Держатель</th><th>Срок действия</th><th></th></tr></thead><tbody id="rows"><tr><td colspan="6"><div class="empty"><div class="emptyicon">▤</div><strong>Пока нет добавленных карт</strong>Заполните форму выше, чтобы добавить первую запись.</div></td></tr></tbody></table></div><p class="footnote">Учебный демонстрационный проект. Данные существуют только в памяти текущей страницы и не отправляются на сервер.</p></section>
+</div></main>
+<script src="script.js" defer></script></body></html>
